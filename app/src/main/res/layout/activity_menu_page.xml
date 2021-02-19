@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuPageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="196dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/blank_string_spacing"
+            tools:visibility="invisible" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:onClick="studyButton"
+            android:text="@string/button_startsStudying"
+            android:textSize="30sp"
+            app:backgroundTint="@color/lightest_blue"
+            app:backgroundTintMode="src_in"
+            app:cornerRadius="@dimen/cardview_compat_inset_shadow"
+            app:iconPadding="4dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/blank_string_spacing"
+            tools:visibility="invisible" />
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:onClick="quizButton"
+            android:text="@string/button_startQuiz"
+            android:textSize="30sp"
+            app:backgroundTint="@color/med_blue"
+            app:backgroundTintMode="src_in"
+            app:cornerRadius="@dimen/cardview_compat_inset_shadow"
+            app:iconPadding="4dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/blank_string_spacing"
+            tools:visibility="invisible" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:onClick="gradeBookButton"
+            android:text="@string/button_viewGrades"
+            android:textSize="30sp"
+            app:backgroundTint="@color/lightest_blue"
+            app:backgroundTintMode="src_in"
+            app:cornerRadius="@dimen/cardview_compat_inset_shadow"
+            app:iconPadding="4dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

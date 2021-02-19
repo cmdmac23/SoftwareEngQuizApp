@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".quizQuestionActivity">
+
+    <TextView
+        android:id="@+id/quizQuestionBox"
+        android:layout_width="377dp"
+        android:layout_height="465dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/quiz_topic1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/quizQuestionBoxImage"
+        android:layout_width="374dp"
+        android:layout_height="157dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/quiz_topic1"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/correctMsg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/true_button"
+        android:layout_width="0dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/button_true"
+        android:textSize="30sp"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintBottom_toTopOf="@+id/false_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/false_button"
+        android:layout_width="0dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="45dp"
+        android:text="@string/button_false"
+        android:textSize="30sp"
+        app:backgroundTint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="205dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="90dp"
+        android:text="@string/button_next"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:backgroundTint="@color/med_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/resultsButton"
+        android:layout_width="285dp"
+        android:layout_height="73dp"
+        android:text="@string/button_results"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:backgroundTint="@color/lightest_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizQuestionBox" />
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="205dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="90dp"
+        android:text="@string/button_finish"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:backgroundTint="@color/lightest_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/correctMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/correct_answer_msg"
+        android:textColor="#4CAF50"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/incorrectMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/incorrect_answer_msg"
+        android:textColor="#C61B0E"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/questionImage"
+        android:layout_width="372dp"
+        android:layout_height="296dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:contentDescription="@string/topic2_question7"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizQuestionBoxImage"
+        tools:srcCompat="@drawable/topic2_question7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
