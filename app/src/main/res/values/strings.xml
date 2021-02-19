@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QuizAppTest</string>
+    <string name="app_name">QuizApp</string>
     <string name="title_message">Software Engineering Study App</string>
     <string name="button_continue">Continue</string>
     <string name="continue_message">Click below to continue</string>

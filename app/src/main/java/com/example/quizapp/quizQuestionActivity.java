@@ -1,4 +1,4 @@
-package com.example.quizapptest;
+package com.example.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.quizapptest">
+    package="com.example.quizapp">
 
     <application
         android:allowBackup="true"
@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizAppTest">
-        <activity android:name=".quizQuestionActivity"></activity>
+        <activity android:name="com.example.quizapp.quizQuestionActivity"></activity>
         <activity
-            android:name=".gradeBookActivity"
-            android:parentActivityName=".MenuPageActivity" />
+            android:name="com.example.quizapp.gradeBookActivity"
+            android:parentActivityName="com.example.quizapp.MenuPageActivity" />
         <activity
-            android:name=".quizPageActivity"
-            android:parentActivityName=".MenuPageActivity" />
+            android:name="com.example.quizapp.quizPageActivity"
+            android:parentActivityName="com.example.quizapp.MenuPageActivity" />
         <activity
-            android:name=".studyPageActivity"
-            android:parentActivityName=".MenuPageActivity" />
+            android:name="com.example.quizapp.studyPageActivity"
+            android:parentActivityName="com.example.quizapp.MenuPageActivity" />
         <activity
-            android:name=".MenuPageActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:name="com.example.quizapp.MenuPageActivity"
+            android:parentActivityName="com.example.quizapp.MainActivity" />
+        <activity android:name="com.example.quizapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
