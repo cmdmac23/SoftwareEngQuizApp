@@ -2,17 +2,20 @@ package com.example.quizapp;
 
 import java.util.Random;
 
-public class QuestionGenerator {
-    //Make sure you change this \/
-    public int totalQuestionNum = 10;
-    // MAKE SURE YOU CHANGE THE ARRAY IN RANDOMIZE() TO FIT THE AMOUNT OF QUESTIONS
+//This picks the questions for the quizzes. It randomly selects 10 questions from those available
+//  from each topic.
 
+public class QuestionGenerator {
+    public int totalQuestionNum = 10;
+
+    //Initializes array for questions and all their attributes
     int [][] questionBank = new int[totalQuestionNum][3];
 
 
     public QuestionGenerator (int topicChoice){
         int[] randomOrder = QuestionGenerator.randomize(topicChoice);
 
+        //gets the correct questions depending on topic choice
         switch (topicChoice){
             case 1:
                 for (int j = 0; j < totalQuestionNum; j++) {
@@ -36,6 +39,7 @@ public class QuestionGenerator {
     public static int[] randomize(int topicChoice){
         int[] randomOrder;
 
+        //Different topics have different total amounts of questions, so the arrays correspond
         if(topicChoice == 1 || topicChoice == 2) {
             randomOrder = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40};
         }
@@ -46,7 +50,7 @@ public class QuestionGenerator {
 
         Random rand = new Random();
 
-
+        //Randomizes the question order
         for (int i = 0; i < randomOrder.length; i++){
             int current = rand.nextInt(randomOrder.length);
             int temp = randomOrder[current];
@@ -56,6 +60,11 @@ public class QuestionGenerator {
 
         return randomOrder;
     }
+
+    // --------------------------------
+    // From here on are the switch statements to assign the questions into the array
+    // The format is [question, true(1) or false(0), the picture that goes or 0 if no image]
+    // --------------------------------
 
     public static int[] topicOneQuestion(int num) {
         int[] currentQuestion = new int[0];

@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+//This page shows the three main options for the app: study, quiz, and grade book
+//It allows the user to choose from a menu of options
+
 public class MenuPageActivity extends AppCompatActivity {
 
     @Override

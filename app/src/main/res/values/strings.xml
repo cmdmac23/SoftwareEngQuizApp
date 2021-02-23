@@ -128,4 +128,5 @@
     <string name="topic3_question28">The process of object-oriented design is only helpful for designing the system architecture.</string>
     <string name="topic3_question29">A limited range of different models may be produced during an object-oriented design process.</string>
     <string name="topic3_question30">Component interfaces must be defined precisely so that other objects can use them.</string>
+    <string name="temp_futurefeature">This will be implemented as a feature later</string>
 </resources>

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+//This page will allow the user to study all of the questions in the question bank for each topic
+
 public class studyPageActivity extends AppCompatActivity {
 
     @Override

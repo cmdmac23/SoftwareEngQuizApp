@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+//Shows a menu featuring all the current available quiz topics
+
 public class quizPageActivity extends AppCompatActivity {
 
     @Override

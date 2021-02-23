@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+//Contains all the features to implement and grade a quiz for each topic
+
 public class quizQuestionActivity extends AppCompatActivity{
 
+    //initializing values
     public int numCorrect = 0;
     public int currentQuestionNum = 1;
     public int totalQuestionNum = 10;
@@ -22,17 +25,21 @@ public class quizQuestionActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_question);
 
+        //get topic choice from previous screen
         Intent intent = getIntent();
         int topicChoice = intent.getIntExtra("topicChoice", 0);
 
+        //get questions from question generator
         QuestionGenerator questions = new QuestionGenerator(topicChoice);
 
+        //Initializing text boxes
         TextView questionText = (TextView) findViewById(R.id.quizQuestionBox);
         TextView questionWithImageText = (TextView) findViewById(R.id.quizQuestionBoxImage);
         TextView correctText = (TextView) findViewById(R.id.correctMsg);
         TextView incorrectText = (TextView) findViewById(R.id.incorrectMsg);
         ImageView questionImage = (ImageView) findViewById(R.id.questionImage);
 
+        //show first question in array, if statement accounts for if there is an image or not
         if(questions.questionBank[0][2] != 0){
             questionText.setVisibility(View.GONE);
             questionWithImageText.setVisibility(View.VISIBLE);
@@ -45,19 +52,23 @@ public class quizQuestionActivity extends AppCompatActivity{
             questionText.setText(questions.questionBank[0][0]);
         }
 
+        //Initialize all of the buttons
         Button falseButton = (Button) findViewById(R.id.false_button);
         Button trueButton = (Button) findViewById(R.id.true_button);
         Button nextButton = (Button) findViewById(R.id.nextButton);
         Button finishButton = (Button) findViewById(R.id.finishButton);
         Button resultsButton = (Button) findViewById(R.id.resultsButton);
 
+        //Set up true button
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Change visibilities of other buttons
                 trueButton.setVisibility(View.GONE);
                 falseButton.setVisibility(View.GONE);
                 nextButton.setVisibility(View.VISIBLE);
 
+                //If the question is answered correctly, add 1 to total correct
                 if (questions.questionBank[currentQuestionNum-1][1] == 1){
                     numCorrect += 1;
                     correctText.setVisibility(View.VISIBLE);
@@ -68,14 +79,16 @@ public class quizQuestionActivity extends AppCompatActivity{
             }
         });
 
-
+        //Set up false button
         falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Change visibilities of other buttons
                 trueButton.setVisibility(View.GONE);
                 falseButton.setVisibility(View.GONE);
                 nextButton.setVisibility(View.VISIBLE);
 
+                //If question is answered correctly, add 1 to total correct
                 if (questions.questionBank[currentQuestionNum-1][1] == 0){
                     numCorrect += 1;
                     correctText.setVisibility(View.VISIBLE);
@@ -86,17 +99,21 @@ public class quizQuestionActivity extends AppCompatActivity{
             }
         });
 
+        //Set up next button
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Change visibilities of other buttons and text
                 nextButton.setVisibility(View.GONE);
 
                 correctText.setVisibility(View.GONE);
                 incorrectText.setVisibility(View.GONE);
 
+                //If there are still questions left to be shown
                 if (currentQuestionNum < totalQuestionNum) {
                     trueButton.setVisibility(View.VISIBLE);
                     falseButton.setVisibility(View.VISIBLE);
+                    //If the question has a corresponding image to go along with it
                     if (questions.questionBank[currentQuestionNum][2] != 0){
                         questionText.setVisibility(View.GONE);
                         questionWithImageText.setVisibility(View.VISIBLE);
@@ -113,6 +130,7 @@ public class quizQuestionActivity extends AppCompatActivity{
                         questionText.setText(questions.questionBank[currentQuestionNum++][0]);
                     }
                 }
+                //Else, finish up the quiz and set up to show results
                 else{
                     questionText.setText(R.string.finished_quiz);
                     resultsButton.setVisibility(View.VISIBLE);
@@ -120,22 +138,28 @@ public class quizQuestionActivity extends AppCompatActivity{
             }
         });
 
+        //Set up results button
         resultsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultsButton.setVisibility(View.GONE);
                 finishButton.setVisibility(View.VISIBLE);
 
+                //Calculate the grade received based on the amount answered correctly
                 double grade = ((double)numCorrect/(double)totalQuestionNum)*100;
 
+                //Format the grade to only show two decimal places
                 DecimalFormat roundDecimal = new DecimalFormat("#.00");
 
+                //Type cast to string
                 String gradeRounded = roundDecimal.format(grade);
 
+                //Set text to show grade
                 questionText.setText("You correctly answered " + numCorrect + " questions out of " + totalQuestionNum + ". \nThis gives you a score of " + gradeRounded + "% on this assignment.");
             }
         });
 
+        //Set up finish button, when clicked it will return to topic choice menu
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

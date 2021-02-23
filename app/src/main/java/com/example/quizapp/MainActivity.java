@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+//This is the main intro screen to the app that shows the title and a button to enter the application
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
