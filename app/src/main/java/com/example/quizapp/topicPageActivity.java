@@ -118,4 +118,23 @@ public class topicPageActivity extends AppCompatActivity {
         }
 
     }
+
+    public void topicButton6 (View view) {
+        Bundle extras = getIntent().getExtras();
+        String activity = extras.getString("activity");
+
+        if (activity.contains("quiz")){
+            Intent intent = new Intent(this, quizQuestionActivity.class);
+            intent.putExtra("topicChoice", 6);
+            intent.putExtra("activity", "quiz");
+            startActivity(intent);
+        }
+        if (activity.contains("study")){
+            Intent intent = new Intent(this, studyPageActivity.class);
+            intent.putExtra("topicChoice", 6);
+            intent.putExtra("activity", "study");
+            startActivity(intent);
+        }
+
+    }
 }

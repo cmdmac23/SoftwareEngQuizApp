@@ -52,6 +52,12 @@ public class QuestionGenerator {
                         this.questionBank[j] = topicFiveQuestion(randomOrder[j]);
                     }
                     break;
+                case 6:
+                    this.totalQuestionNum = 20;
+                    for (int j = 0; j < 20; j++) {
+                        this.questionBank[j] = topicSixQuestion(randomOrder[j]);
+                    }
+                    break;
             }
         }
 
@@ -81,6 +87,11 @@ public class QuestionGenerator {
                 case 5:
                     for (int j = 0; j < totalQuestionNum; j++) {
                         this.questionBank[j] = topicFiveQuestion(randomOrder[j]);
+                    }
+                    break;
+                case 6:
+                    for (int j = 0; j < totalQuestionNum; j++) {
+                        this.questionBank[j] = topicSixQuestion(randomOrder[j]);
                     }
                     break;
             }
@@ -663,6 +674,74 @@ public class QuestionGenerator {
                 break;
             case 20:
                 currentQuestion = new int[]{R.string.topic5_question20, 0, 0};
+                break;
+        }
+
+        return currentQuestion;
+    }
+
+    public static int[] topicSixQuestion(int num) {
+        int[] currentQuestion = new int[0];
+        switch (num) {
+            case 1:
+                currentQuestion = new int[]{R.string.topic6_question1, 0, 0};
+                break;
+            case 2:
+                currentQuestion = new int[]{R.string.topic6_question2, 1, 0};
+                break;
+            case 3:
+                currentQuestion = new int[]{R.string.topic6_question3, 1, 0};
+                break;
+            case 4:
+                currentQuestion = new int[]{R.string.topic6_question4, 0, 0};
+                break;
+            case 5:
+                currentQuestion = new int[]{R.string.topic6_question5, 1, 0};
+                break;
+            case 6:
+                currentQuestion = new int[]{R.string.topic6_question6, 0, 0};
+                break;
+            case 7:
+                currentQuestion = new int[]{R.string.topic6_question7, 1, 0};
+                break;
+            case 8:
+                currentQuestion = new int[]{R.string.topic6_question8, 0, 0};
+                break;
+            case 9:
+                currentQuestion = new int[]{R.string.topic6_question9, 0, 0};
+                break;
+            case 10:
+                currentQuestion = new int[]{R.string.topic6_question10, 1, 0};
+                break;
+            case 11:
+                currentQuestion = new int[]{R.string.topic6_question11, 1, 0};
+                break;
+            case 12:
+                currentQuestion = new int[]{R.string.topic6_question12, 1, 0};
+                break;
+            case 13:
+                currentQuestion = new int[]{R.string.topic6_question13, 0, 0};
+                break;
+            case 14:
+                currentQuestion = new int[]{R.string.topic6_question14, 0, 0};
+                break;
+            case 15:
+                currentQuestion = new int[]{R.string.topic6_question15, 1, 0};
+                break;
+            case 16:
+                currentQuestion = new int[]{R.string.topic6_question16, 0, 0};
+                break;
+            case 17:
+                currentQuestion = new int[]{R.string.topic6_question17, 0, R.drawable.topic6_question17};
+                break;
+            case 18:
+                currentQuestion = new int[]{R.string.topic6_question18, 1, 0};
+                break;
+            case 19:
+                currentQuestion = new int[]{R.string.topic6_question19, 0, 0};
+                break;
+            case 20:
+                currentQuestion = new int[]{R.string.topic6_question20, 0, 0};
                 break;
         }
 

@@ -194,4 +194,25 @@
     <string name="topic5_question18">Timing errors involve the called and called components operating at the same speeds.</string>
     <string name="topic5_question19">Use-cases developed to identify system interactions can be used as a basis for system testing.</string>
     <string name="topic5_question20">A benefit of test-driven development is every code segment written has at least one associated test, so all code is covered.</string>
+    <string name="quiz_topic6">Software Testing Techniques</string>
+    <string name="topic6_question1">Software testing is not important as reviews and SQA activities are sufficient.</string>
+    <string name="topic6_question2">Functional testing involves exercising software requirements.</string>
+    <string name="topic6_question3">Structural testing involves testing internal program logic.</string>
+    <string name="topic6_question4">The best way to see if your software is fully functional is to trust your developers and their code.</string>
+    <string name="topic6_question5">Static analysis and dynamic analysis two types of program analysis.</string>
+    <string name="topic6_question6">A bug is a mistake made by the programmer that introduces a fault.</string>
+    <string name="topic6_question7">A test driver is a main program that accepts test case data, passes such data to the component and prints relevant results.</string>
+    <string name="topic6_question8">A test stub is a collection of software and test data configured to test a program unit by running it under varying conditions and monitoring its behavior.</string>
+    <string name="topic6_question9">Functional testing is also known as White box testing.</string>
+    <string name="topic6_question10">Gray box testing is testing with both functional and structural techniques.</string>
+    <string name="topic6_question11">Beta test is testing products using real users.</string>
+    <string name="topic6_question12">System testing is testing whole programs as a system.</string>
+    <string name="topic6_question13">Regression testing is testing to approve the acceptance of a system by a client.</string>
+    <string name="topic6_question14">Quality assurance and quality control are the same thing.</string>
+    <string name="topic6_question15">Verification is an internal process.</string>
+    <string name="topic6_question16">Validation goes alongside verification.</string>
+    <string name="topic6_question17">This is an example of Quality Assurance vs Quality Control.</string>
+    <string name="topic6_question18">Testing schedule is an overall testing schedule and resource allocation for this schedule.</string>
+    <string name="topic6_question19">Constraints are required software tools and estimated hardware utilization.</string>
+    <string name="topic6_question20">The testing process is not very important in software development.</string>
 </resources>

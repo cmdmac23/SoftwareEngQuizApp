@@ -6,22 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".topicPageActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MenuPageActivity">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="113dp"
-            tools:layout_editor_absoluteY="196dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="9dp"
                 android:text="@string/blank_string_spacing"
                 tools:visibility="invisible" />
 
@@ -41,9 +38,9 @@
                 app:iconPadding="4dp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textView11"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="9dp"
                 android:text="@string/blank_string_spacing"
                 tools:visibility="invisible" />
 
@@ -63,9 +60,9 @@
                 app:iconPadding="4dp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView12"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="9dp"
                 android:text="@string/blank_string_spacing"
                 tools:visibility="invisible" />
 
@@ -85,9 +82,9 @@
                 app:iconPadding="4dp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textView13"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="9dp"
                 android:text="@string/blank_string_spacing"
                 tools:visibility="invisible" />
 
@@ -107,9 +104,9 @@
                 app:iconPadding="4dp" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/textView6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="9dp"
                 android:text="@string/blank_string_spacing"
                 tools:visibility="invisible" />
 
@@ -128,7 +125,41 @@
                 app:cornerRadius="@dimen/cardview_compat_inset_shadow"
                 app:iconPadding="4dp" />
 
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:text="@string/blank_string_spacing"
+                tools:visibility="invisible" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:insetTop="2dp"
+                android:insetBottom="2dp"
+                android:onClick="topicButton6"
+                android:text="@string/quiz_topic6"
+                android:textSize="30sp"
+                app:backgroundTint="@color/med_blue"
+                app:backgroundTintMode="src_in"
+                app:cornerRadius="@dimen/cardview_compat_inset_shadow"
+                app:iconPadding="4dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:text="@string/blank_string_spacing"
+                tools:visibility="invisible" />
+
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MenuPageActivity"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
