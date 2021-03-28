@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,29 @@ public class quizQuestionActivity extends AppCompatActivity{
     public int numCorrect = 0;
     public int currentQuestionNum = 1;
     public int totalQuestionNum = 10;
+
+    TextView timerText;
+    long startTime = 0;
+    public int finalSeconds;
+    public int finalMinutes;
+
+    Handler timerHandler = new Handler();
+    Runnable timerRunnable = new Runnable() {
+        @Override
+        public void run() {
+            long milliseconds = System.currentTimeMillis() - startTime;
+            int seconds = (int) (milliseconds/1000);
+            int minutes = (seconds/60);
+            seconds = (seconds%60);
+
+            timerText.setText(String.format("%d:%02d", minutes, seconds));
+
+            finalSeconds = seconds;
+            finalMinutes = minutes;
+
+            timerHandler.postDelayed(this, 1000);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +62,23 @@ public class quizQuestionActivity extends AppCompatActivity{
         TextView questionWithImageText = (TextView) findViewById(R.id.quizQuestionBoxImage);
         TextView correctText = (TextView) findViewById(R.id.correctMsg);
         TextView incorrectText = (TextView) findViewById(R.id.incorrectMsg);
-        //TextView timerBox = (TextView) findViewById(R.id.timerBox);
+        timerText = (TextView) findViewById(R.id.timerBox);
         ImageView questionImage = (ImageView) findViewById(R.id.questionImage);
+
+        //Initialize all of the buttons
+        Button falseButton = (Button) findViewById(R.id.false_button);
+        Button trueButton = (Button) findViewById(R.id.true_button);
+        Button nextButton = (Button) findViewById(R.id.nextButton);
+        Button finishButton = (Button) findViewById(R.id.finishButton);
+        Button resultsButton = (Button) findViewById(R.id.resultsButton);
+
+        if(resultsButton.isShown()){
+            timerHandler.removeCallbacks(timerRunnable);
+        }
+        else{
+            startTime = System.currentTimeMillis();
+            timerHandler.postDelayed(timerRunnable, 0);
+        }
 
 
         //show first question in array, if statement accounts for if there is an image or not
@@ -55,12 +94,7 @@ public class quizQuestionActivity extends AppCompatActivity{
             questionText.setText(questions.questionBank[0][0]);
         }
 
-        //Initialize all of the buttons
-        Button falseButton = (Button) findViewById(R.id.false_button);
-        Button trueButton = (Button) findViewById(R.id.true_button);
-        Button nextButton = (Button) findViewById(R.id.nextButton);
-        Button finishButton = (Button) findViewById(R.id.finishButton);
-        Button resultsButton = (Button) findViewById(R.id.resultsButton);
+
 
         //Set up true button
         trueButton.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +171,10 @@ public class quizQuestionActivity extends AppCompatActivity{
                 else{
                     questionText.setText(R.string.finished_quiz);
                     resultsButton.setVisibility(View.VISIBLE);
+
+                    timerHandler.removeCallbacks(timerRunnable);
+
+                    timerText.setVisibility(View.GONE);
                 }
             }
         });
@@ -156,9 +194,10 @@ public class quizQuestionActivity extends AppCompatActivity{
 
                 //Type cast to string
                 String gradeRounded = roundDecimal.format(grade);
+                String totalTime = String.format("%d:%02d", finalMinutes, finalSeconds);
 
                 //Set text to show grade
-                questionText.setText("You correctly answered " + numCorrect + " questions out of " + totalQuestionNum + ". \nThis gives you a score of " + gradeRounded + "% on this assignment.");
+                questionText.setText("You correctly answered " + numCorrect + " questions out of " + totalQuestionNum + ". \nThis gives you a score of " + gradeRounded + "% on this assignment. \n\nYour final time was: " + totalTime);
             }
         });
 
@@ -170,6 +209,12 @@ public class quizQuestionActivity extends AppCompatActivity{
             }
         });
 
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            timerHandler.removeCallbacks(timerRunnable);
         }
 
 
