@@ -14,7 +14,7 @@
             android:name="com.example.quizapp.gradeBookActivity"
             android:parentActivityName="com.example.quizapp.MenuPageActivity" />
         <activity
-            android:name="com.example.quizapp.quizPageActivity"
+            android:name="com.example.quizapp.topicPageActivity"
             android:parentActivityName="com.example.quizapp.MenuPageActivity" />
         <activity
             android:name="com.example.quizapp.studyPageActivity"

@@ -28,16 +28,19 @@ public class quizQuestionActivity extends AppCompatActivity{
         //get topic choice from previous screen
         Intent intent = getIntent();
         int topicChoice = intent.getIntExtra("topicChoice", 0);
+        String activity = intent.getStringExtra("activity");
 
         //get questions from question generator
-        QuestionGenerator questions = new QuestionGenerator(topicChoice);
+        QuestionGenerator questions = new QuestionGenerator(topicChoice, activity);
 
         //Initializing text boxes
         TextView questionText = (TextView) findViewById(R.id.quizQuestionBox);
         TextView questionWithImageText = (TextView) findViewById(R.id.quizQuestionBoxImage);
         TextView correctText = (TextView) findViewById(R.id.correctMsg);
         TextView incorrectText = (TextView) findViewById(R.id.incorrectMsg);
+        //TextView timerBox = (TextView) findViewById(R.id.timerBox);
         ImageView questionImage = (ImageView) findViewById(R.id.questionImage);
+
 
         //show first question in array, if statement accounts for if there is an image or not
         if(questions.questionBank[0][2] != 0){
@@ -171,3 +174,4 @@ public class quizQuestionActivity extends AppCompatActivity{
 
 
     }
+

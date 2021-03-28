@@ -18,12 +18,14 @@ public class MenuPageActivity extends AppCompatActivity {
     }
 
     public void studyButton (View view) {
-        Intent intent = new Intent(this, studyPageActivity.class);
+        Intent intent = new Intent(this, topicPageActivity.class);
+        intent.putExtra("activity", "study");
         startActivity(intent);
     }
 
     public void quizButton (View view) {
-        Intent intent = new Intent(this, quizPageActivity.class);
+        Intent intent = new Intent(this, topicPageActivity.class);
+        intent.putExtra("activity", "quiz");
         startActivity(intent);
     }
 

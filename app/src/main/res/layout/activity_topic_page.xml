@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".quizPageActivity">
+    tools:context=".topicPageActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -78,6 +78,50 @@
                 android:insetBottom="2dp"
                 android:onClick="topicButton3"
                 android:text="@string/quiz_topic3"
+                android:textSize="30sp"
+                app:backgroundTint="@color/lightest_blue"
+                app:backgroundTintMode="src_in"
+                app:cornerRadius="@dimen/cardview_compat_inset_shadow"
+                app:iconPadding="4dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/blank_string_spacing"
+                tools:visibility="invisible" />
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:insetTop="2dp"
+                android:insetBottom="2dp"
+                android:onClick="topicButton4"
+                android:text="@string/quiz_topic4"
+                android:textSize="30sp"
+                app:backgroundTint="@color/med_blue"
+                app:backgroundTintMode="src_in"
+                app:cornerRadius="@dimen/cardview_compat_inset_shadow"
+                app:iconPadding="4dp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/blank_string_spacing"
+                tools:visibility="invisible" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:insetTop="2dp"
+                android:insetBottom="2dp"
+                android:onClick="topicButton5"
+                android:text="@string/quiz_topic5"
                 android:textSize="30sp"
                 app:backgroundTint="@color/lightest_blue"
                 app:backgroundTintMode="src_in"
