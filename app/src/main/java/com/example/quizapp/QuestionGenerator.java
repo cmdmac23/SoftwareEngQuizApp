@@ -19,7 +19,8 @@ public class QuestionGenerator {
 
         int[] randomOrder = QuestionGenerator.randomize(topicChoice);
 
-        //gets the correct questions depending on topic choice
+        //gets the correct questions depending on topic choice and if the user is wanting to study
+        //   or quiz themselves
         if (activity.contains("study")){
             switch (topicChoice) {
                 case 1:

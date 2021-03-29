@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 //Shows a menu featuring all the current available quiz topics
+//Now allows use for both study and quiz feature
 
 public class topicPageActivity extends AppCompatActivity {
 
@@ -18,7 +19,6 @@ public class topicPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic_page);
 
-
     }
 
     public void topicButton1 (View view) {
@@ -27,6 +27,7 @@ public class topicPageActivity extends AppCompatActivity {
 
         System.out.println(activity);
 
+        //Sends information to next scene on which activity the user wants to use and the topic
         if (activity.contains("quiz")){
             Intent intent = new Intent(this, quizQuestionActivity.class);
             intent.putExtra("topicChoice", 1);
@@ -47,6 +48,7 @@ public class topicPageActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String activity = extras.getString("activity");
 
+        //Sends information to next scene on which activity the user wants to use and the topic
         if (activity.contains("quiz")){
             Intent intent = new Intent(this, quizQuestionActivity.class);
             intent.putExtra("topicChoice", 2);
@@ -66,6 +68,7 @@ public class topicPageActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String activity = extras.getString("activity");
 
+        //Sends information to next scene on which activity the user wants to use and the topic
         if (activity.contains("quiz")){
             Intent intent = new Intent(this, quizQuestionActivity.class);
             intent.putExtra("topicChoice", 3);
@@ -85,6 +88,7 @@ public class topicPageActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String activity = extras.getString("activity");
 
+        //Sends information to next scene on which activity the user wants to use and the topic
         if (activity.contains("quiz")){
             Intent intent = new Intent(this, quizQuestionActivity.class);
             intent.putExtra("topicChoice", 4);
@@ -104,6 +108,7 @@ public class topicPageActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String activity = extras.getString("activity");
 
+        //Sends information to next scene on which activity the user wants to use and the topic
         if (activity.contains("quiz")){
             Intent intent = new Intent(this, quizQuestionActivity.class);
             intent.putExtra("topicChoice", 5);
@@ -123,6 +128,7 @@ public class topicPageActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String activity = extras.getString("activity");
 
+        //Sends information to next scene on which activity the user wants to use and the topic
         if (activity.contains("quiz")){
             Intent intent = new Intent(this, quizQuestionActivity.class);
             intent.putExtra("topicChoice", 6);

@@ -26,17 +26,22 @@ public class quizQuestionActivity extends AppCompatActivity{
     public int finalSeconds;
     public int finalMinutes;
 
+    //Creates handler and runnable for the timer feature
+    //Allows the timer to run continuously and not need to be actively called to update
     Handler timerHandler = new Handler();
     Runnable timerRunnable = new Runnable() {
         @Override
         public void run() {
+            //Getting elapsed time from system time and formatting it into minutes and seconds
             long milliseconds = System.currentTimeMillis() - startTime;
             int seconds = (int) (milliseconds/1000);
             int minutes = (seconds/60);
             seconds = (seconds%60);
 
+            //Sets text for user to see
             timerText.setText(String.format("%d:%02d", minutes, seconds));
 
+            //Variables used to format final time shown to user once the quiz is completed
             finalSeconds = seconds;
             finalMinutes = minutes;
 
@@ -72,6 +77,7 @@ public class quizQuestionActivity extends AppCompatActivity{
         Button finishButton = (Button) findViewById(R.id.finishButton);
         Button resultsButton = (Button) findViewById(R.id.resultsButton);
 
+        //Sets when the timer is started and when it will be stopped
         if(resultsButton.isShown()){
             timerHandler.removeCallbacks(timerRunnable);
         }
@@ -93,7 +99,6 @@ public class quizQuestionActivity extends AppCompatActivity{
         else{
             questionText.setText(questions.questionBank[0][0]);
         }
-
 
 
         //Set up true button
@@ -196,7 +201,7 @@ public class quizQuestionActivity extends AppCompatActivity{
                 String gradeRounded = roundDecimal.format(grade);
                 String totalTime = String.format("%d:%02d", finalMinutes, finalSeconds);
 
-                //Set text to show grade
+                //Set text to show grade and final time
                 questionText.setText("You correctly answered " + numCorrect + " questions out of " + totalQuestionNum + ". \nThis gives you a score of " + gradeRounded + "% on this assignment. \n\nYour final time was: " + totalTime);
             }
         });
@@ -211,6 +216,7 @@ public class quizQuestionActivity extends AppCompatActivity{
 
         }
 
+        //Also stops timer if the scene is paused
         @Override
         public void onPause() {
             super.onPause();

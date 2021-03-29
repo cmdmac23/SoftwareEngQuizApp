@@ -16,6 +16,7 @@ import org.w3c.dom.Text;
 public class studyPageActivity extends AppCompatActivity {
 
     public int currentQuestionNum = 1;
+    //Used to determine which side is showing on flashcard
     public int showingAns = 0;
 
     @Override
@@ -31,6 +32,7 @@ public class studyPageActivity extends AppCompatActivity {
         //get questions from question generator
         QuestionGenerator questions = new QuestionGenerator(topicChoice, activity);
 
+        //Initialize all text and buttons
         TextView questionText = (TextView) findViewById(R.id.studyQuestionBox);
         TextView questionWithImageText = (TextView) findViewById(R.id.studyQuestionBoxImage);
         TextView instructionText = (TextView) findViewById(R.id.studyInstructionText);
@@ -39,9 +41,10 @@ public class studyPageActivity extends AppCompatActivity {
         Button finishButton = (Button) findViewById((R.id.finishFlashcardButton));
         ImageView questionImage = (ImageView) findViewById(R.id.studyImage);
 
+        //Get total question number
         int totalQuestionNum = questions.totalQuestionNum;
 
-
+        //Sets up initial question depending on if there is an image or not
         if(questions.questionBank[0][2] != 0){
             questionText.setVisibility(View.GONE);
             questionWithImageText.setVisibility(View.VISIBLE);
@@ -93,10 +96,13 @@ public class studyPageActivity extends AppCompatActivity {
             }
         });
 
+        //Allows the user to "flip" the card to go between the question and the answer
         flipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Determines if the answer is already showing or not
                 if (showingAns == 0){
+                    //Determines if true or false and shows correct answer
                     if (questions.questionBank[currentQuestionNum-1][1] == 0){
                         if(questionText.isShown()){
                             questionText.setText(R.string.studyAnsFalse);
@@ -115,6 +121,7 @@ public class studyPageActivity extends AppCompatActivity {
                     }
                     showingAns = 1;
                 }
+                //Otherwise, sets text back to question
                 else{
                     if(questionText.isShown()){
                         questionText.setText(questions.questionBank[currentQuestionNum-1][0]);
