@@ -11,8 +11,6 @@ import android.view.View;
 
 public class topicPageActivity extends AppCompatActivity {
 
-    //Intent intent = getIntent();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

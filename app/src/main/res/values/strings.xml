@@ -215,4 +215,9 @@
     <string name="topic6_question18">Testing schedule is an overall testing schedule and resource allocation for this schedule.</string>
     <string name="topic6_question19">Constraints are required software tools and estimated hardware utilization.</string>
     <string name="topic6_question20">The testing process is not very important in software development.</string>
+    <string name="gbTopicHeader">TOPIC</string>
+    <string name="gbTimeHeader">TIME</string>
+    <string name="gbGradeHeader">GRADE</string>
+    <string name="gbTimePlaceholder">0:00</string>
+    <string name="gbGradePlaceholder">XX%</string>
 </resources>

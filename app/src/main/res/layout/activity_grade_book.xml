@@ -2,18 +2,415 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gradebookSpace3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".gradeBookActivity">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/temp_futurefeature"
-        android:textSize="18sp"
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gradebookSpace0"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopicHeader"
+                android:layout_width="267dp"
+                android:layout_height="25dp"
+                android:background="@color/med_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTopicHeader"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gtTimeHeader"
+                android:layout_width="58dp"
+                android:layout_height="match_parent"
+                android:background="#1E88E5"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimeHeader"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbGradeHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1976D2"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradeHeader"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gradebookSpace1"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopic1Title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/lightest_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/quiz_topic1"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbTopic1Time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00ACC1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimePlaceholder"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/gbTopic1Grade"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="#0097A7"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradePlaceholder"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gradebookSpace2"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopic2Title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/lightest_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/quiz_topic2"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbTopic2Time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ACC1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimePlaceholder"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/gbTopic2Grade"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:background="#0097A7"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradePlaceholder"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopic3Title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/lightest_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/quiz_topic3"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbTopic3Time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ACC1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimePlaceholder"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/gbTopic3Grade"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:background="#0097A7"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradePlaceholder"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gradebookSpace4"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopic4Title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/lightest_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/quiz_topic4"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbTopic4Time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ACC1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimePlaceholder"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/gbTopic4Grade"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:background="#0097A7"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradePlaceholder"
+                android:textColor="#FFFFFF" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gradebookSpace5"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopic5Title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/lightest_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/quiz_topic5"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbTopic5Time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ACC1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimePlaceholder"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/gbTopic5Grade"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:background="#0097A7"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradePlaceholder"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gradebookSpace6"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopic6Title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/lightest_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/quiz_topic6"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbTopic6Time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ACC1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimePlaceholder"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/gbTopic6Grade"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:background="#0097A7"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradePlaceholder"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gradebookSpace7"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopic7Title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/lightest_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/quiz_topic1"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbTopic7Time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ACC1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimePlaceholder"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/gbTopic7Grade"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:background="#0097A7"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradePlaceholder"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gradebookSpace8"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:text="@string/blank_string_spacing" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbTopic8Title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/lightest_blue"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/quiz_topic1"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gbTopic8Time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ACC1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbTimePlaceholder"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/gbTopic8Grade"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:background="#0097A7"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/gbGradePlaceholder"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
