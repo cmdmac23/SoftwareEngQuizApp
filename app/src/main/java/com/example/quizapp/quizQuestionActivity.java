@@ -2,13 +2,17 @@ package com.example.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -223,6 +227,12 @@ public class quizQuestionActivity extends AppCompatActivity{
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String[] topicChoiceTitles = {"Introduction", "Software Processes", "Implementation", "Agile Software Development", "Software Testing", "Software Testing Techniques", "Future Topic 7", "Future Topic 8"};
+
+                String resultsMessage = ("I just took a quiz over the topic \"" + topicChoiceTitles[topicChoice-1] + "\"and received a score of " + finalGradeReturn + ".");
+
+                sendEmail(resultsMessage);
+
                 emailButton.setVisibility(View.GONE);
             }
         });
@@ -242,6 +252,22 @@ public class quizQuestionActivity extends AppCompatActivity{
 
         }
 
+        @SuppressLint("LongLogTag")
+        protected void sendEmail(String results) {
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+            emailIntent.setData(Uri.parse("mailto:"));
+            emailIntent.setType("text/plain");
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Quiz Results");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, results);
+
+            try {
+                startActivity(Intent.createChooser(emailIntent, "Send email"));
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(quizQuestionActivity.this, "Email is not available", Toast.LENGTH_SHORT).show();
+            }
+        }
+
         //Also stops timer if the scene is paused
         @Override
         public void onPause() {
@@ -251,4 +277,7 @@ public class quizQuestionActivity extends AppCompatActivity{
 
 
     }
+
+
+
 
