@@ -82,6 +82,7 @@ public class quizQuestionActivity extends AppCompatActivity{
         Button nextButton = (Button) findViewById(R.id.nextButton);
         Button finishButton = (Button) findViewById(R.id.finishButton);
         Button resultsButton = (Button) findViewById(R.id.resultsButton);
+        Button emailButton = (Button) findViewById(R.id.sendEmailButton);
 
         //Sets when the timer is started and when it will be stopped
         if(resultsButton.isShown()){
@@ -180,6 +181,9 @@ public class quizQuestionActivity extends AppCompatActivity{
                 }
                 //Else, finish up the quiz and set up to show results
                 else{
+                    questionText.setVisibility(View.VISIBLE);
+                    questionWithImageText.setVisibility(View.GONE);
+                    questionImage.setVisibility(View.GONE);
                     questionText.setText(R.string.finished_quiz);
                     resultsButton.setVisibility(View.VISIBLE);
 
@@ -196,12 +200,13 @@ public class quizQuestionActivity extends AppCompatActivity{
             public void onClick(View v) {
                 resultsButton.setVisibility(View.GONE);
                 finishButton.setVisibility(View.VISIBLE);
+                emailButton.setVisibility(View.VISIBLE);
 
                 //Calculate the grade received based on the amount answered correctly
                 double grade = ((double)numCorrect/(double)totalQuestionNum)*100;
 
                 //Format the grade to only show two decimal places
-                DecimalFormat roundDecimal = new DecimalFormat("#.00");
+                DecimalFormat roundDecimal = new DecimalFormat("#.0");
 
                 //Type cast to string
                 String gradeRounded = roundDecimal.format(grade);
@@ -212,6 +217,13 @@ public class quizQuestionActivity extends AppCompatActivity{
 
                 //Set text to show grade and final time
                 questionText.setText("You correctly answered " + numCorrect + " questions out of " + totalQuestionNum + ". \nThis gives you a score of " + gradeRounded + "% on this assignment. \n\nYour final time was: " + totalTime);
+            }
+        });
+
+        emailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                emailButton.setVisibility(View.GONE);
             }
         });
 

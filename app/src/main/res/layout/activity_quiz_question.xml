@@ -101,16 +101,33 @@
 
     <Button
         android:id="@+id/finishButton"
-        android:layout_width="205dp"
+        android:layout_width="275dp"
         android:layout_height="77dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="52dp"
         android:text="@string/button_finish"
         android:textSize="30sp"
         android:visibility="gone"
         app:backgroundTint="@color/lightest_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendEmailButton" />
+
+    <Button
+        android:id="@+id/sendEmailButton"
+        android:layout_width="275dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="144dp"
+        android:text="@string/emailResults"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:backgroundTint="@color/lightest_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizQuestionBox" />
 
     <TextView
         android:id="@+id/correctMsg"
