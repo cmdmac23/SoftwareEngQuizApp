@@ -229,7 +229,7 @@ public class quizQuestionActivity extends AppCompatActivity{
             public void onClick(View v) {
                 String[] topicChoiceTitles = {"Introduction", "Software Processes", "Implementation", "Agile Software Development", "Software Testing", "Software Testing Techniques", "Future Topic 7", "Future Topic 8"};
 
-                String resultsMessage = ("I just took a quiz over the topic \"" + topicChoiceTitles[topicChoice-1] + "\"and received a score of " + finalGradeReturn + ".");
+                String resultsMessage = ("I just took a quiz over the topic \"" + topicChoiceTitles[topicChoice-1] + "\" and received a score of " + finalGradeReturn + ".");
 
                 sendEmail(resultsMessage);
 
