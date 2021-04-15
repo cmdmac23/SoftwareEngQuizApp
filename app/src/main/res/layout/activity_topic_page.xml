@@ -23,7 +23,7 @@
                 tools:visibility="invisible" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/tpTopic1"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -45,7 +45,7 @@
                 tools:visibility="invisible" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/tpTopic2"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -67,7 +67,7 @@
                 tools:visibility="invisible" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/tpTopic3"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -89,7 +89,7 @@
                 tools:visibility="invisible" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/tpTopic4"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -111,7 +111,7 @@
                 tools:visibility="invisible" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/tpTopic5"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -133,7 +133,7 @@
                 tools:visibility="invisible" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/tpTopic6"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"

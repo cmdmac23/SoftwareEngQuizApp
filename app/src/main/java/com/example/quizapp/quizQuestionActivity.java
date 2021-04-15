@@ -21,6 +21,10 @@ public class quizQuestionActivity extends AppCompatActivity{
     public int currentQuestionNum = 1;
     public int totalQuestionNum = 10;
 
+    public int topicChoiceReturn = 0;
+    public String finalTimeReturn = "0:00";
+    public String finalGradeReturn = "XX%";
+
     TextView timerText;
     long startTime = 0;
     public int finalSeconds;
@@ -58,6 +62,8 @@ public class quizQuestionActivity extends AppCompatActivity{
         Intent intent = getIntent();
         int topicChoice = intent.getIntExtra("topicChoice", 0);
         String activity = intent.getStringExtra("activity");
+
+        topicChoiceReturn = topicChoice;
 
         //get questions from question generator
         QuestionGenerator questions = new QuestionGenerator(topicChoice, activity);
@@ -201,6 +207,9 @@ public class quizQuestionActivity extends AppCompatActivity{
                 String gradeRounded = roundDecimal.format(grade);
                 String totalTime = String.format("%d:%02d", finalMinutes, finalSeconds);
 
+                finalGradeReturn = gradeRounded;
+                finalTimeReturn = totalTime;
+
                 //Set text to show grade and final time
                 questionText.setText("You correctly answered " + numCorrect + " questions out of " + totalQuestionNum + ". \nThis gives you a score of " + gradeRounded + "% on this assignment. \n\nYour final time was: " + totalTime);
             }
@@ -210,6 +219,11 @@ public class quizQuestionActivity extends AppCompatActivity{
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent returnIntent = getIntent();
+                returnIntent.putExtra("topicChoice", topicChoiceReturn);
+                returnIntent.putExtra("finalTime", finalTimeReturn);
+                returnIntent.putExtra("finalGrade", finalGradeReturn);
+                setResult(RESULT_OK, returnIntent);
                 finish();
             }
         });

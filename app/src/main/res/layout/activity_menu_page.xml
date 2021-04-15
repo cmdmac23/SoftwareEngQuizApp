@@ -21,7 +21,7 @@
             tools:visibility="invisible" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/mpStudyButton"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -43,7 +43,7 @@
             tools:visibility="invisible" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/mpQuizButton"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -65,7 +65,7 @@
             tools:visibility="invisible" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/mpGradeButton"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
