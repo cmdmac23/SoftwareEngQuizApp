@@ -25,7 +25,6 @@ public class MenuPageActivity extends AppCompatActivity {
         Button quizButton = (Button) findViewById(R.id.mpQuizButton);
         Button gradeButton = (Button) findViewById(R.id.mpGradeButton);
 
-        //quizData quizDataArray = new quizData();
 
         studyButton.setOnClickListener(new View.OnClickListener() {
             @Override
