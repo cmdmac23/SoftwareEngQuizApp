@@ -92,6 +92,4 @@ class QuestionGeneratorTest {
         assertEquals(topicThreeQuestionTwentyActual[2], 0, "Topic Three Question 20 failed match for array[2]");
     }
 
-
-
 }

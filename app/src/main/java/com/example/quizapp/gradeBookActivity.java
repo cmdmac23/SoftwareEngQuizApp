@@ -16,9 +16,12 @@ public class gradeBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grade_book);
 
+        // Gets quiz data from previous activity
+        // An array containing times and grades for each topic
         Intent intent = getIntent();
         quizData dataArray = (quizData)intent.getSerializableExtra("quizData");
 
+        // Initializes all of the text boxes for grades
         TextView topic1Grade = (TextView) findViewById(R.id.gbTopic1Grade);
         TextView topic2Grade = (TextView) findViewById(R.id.gbTopic2Grade);
         TextView topic3Grade = (TextView) findViewById(R.id.gbTopic3Grade);
@@ -28,6 +31,7 @@ public class gradeBookActivity extends AppCompatActivity {
         TextView topic7Grade = (TextView) findViewById(R.id.gbTopic7Grade);
         //TextView topic8Grade = (TextView) findViewById(R.id.gbTopic8Grade);
 
+        // Initializes all of the text boxes for times
         TextView topic1Time = (TextView) findViewById(R.id.gbTopic1Time);
         TextView topic2Time = (TextView) findViewById(R.id.gbTopic2Time);
         TextView topic3Time = (TextView) findViewById(R.id.gbTopic3Time);
@@ -37,6 +41,8 @@ public class gradeBookActivity extends AppCompatActivity {
         TextView topic7Time = (TextView) findViewById(R.id.gbTopic7Time);
         //TextView topic8Time = (TextView) findViewById(R.id.gbTopic8Time);
 
+
+        // Updates all of the grades
         topic1Grade.setText(dataArray.information[0][0]);
         topic2Grade.setText(dataArray.information[1][0]);
         topic3Grade.setText(dataArray.information[2][0]);
@@ -46,6 +52,7 @@ public class gradeBookActivity extends AppCompatActivity {
         topic7Grade.setText(dataArray.information[6][0]);
         //topic8Grade.setText(dataArray.information[7][0]);
 
+        // Updates all of the times
         topic1Time.setText(dataArray.information[0][1]);
         topic2Time.setText(dataArray.information[1][1]);
         topic3Time.setText(dataArray.information[2][1]);

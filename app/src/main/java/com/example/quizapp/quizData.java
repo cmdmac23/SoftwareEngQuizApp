@@ -2,6 +2,9 @@ package com.example.quizapp;
 
 import java.io.Serializable;
 
+// Sets up an array to hold all information needed for grade book
+// Used so it can be static and passed easily between activities
+
 public class quizData implements Serializable {
 
     String[][] information;

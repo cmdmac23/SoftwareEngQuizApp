@@ -25,9 +25,12 @@ public class quizQuestionActivity extends AppCompatActivity{
     public int totalQuestionNum = 10;
 
     public int topicChoiceReturn = 0;
+
+    // Initializing filler strings for grade book
     public String finalTimeReturn = "0:00";
     public String finalGradeReturn = "XX%";
 
+    // Creates necessary variables for timer
     TextView timerText;
     long startTime = 0;
     public int finalSeconds;
@@ -205,6 +208,7 @@ public class quizQuestionActivity extends AppCompatActivity{
                 finishButton.setVisibility(View.VISIBLE);
                 emailButton.setVisibility(View.VISIBLE);
 
+                // Format results into string for printing and email function
                 String[] resultsString = calculateStrings();
 
                 String gradeRounded = resultsString[0];
@@ -219,6 +223,7 @@ public class quizQuestionActivity extends AppCompatActivity{
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Array of all topic choices so that they can be used in email
                 String[] topicChoiceTitles = {"Introduction", "Software Processes", "Implementation", "Agile Software Development", "Software Testing", "Software Testing Techniques", "Future Topic 7", "Future Topic 8"};
 
                 String resultsMessage = ("I just took a quiz over the topic \"" + topicChoiceTitles[topicChoice-1] + "\" and received a score of " + finalGradeReturn + ".");
@@ -233,6 +238,7 @@ public class quizQuestionActivity extends AppCompatActivity{
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Pass information to parent activity
                 Intent returnIntent = getIntent();
                 returnIntent.putExtra("topicChoice", topicChoiceReturn);
                 returnIntent.putExtra("finalTime", finalTimeReturn);
@@ -267,11 +273,13 @@ public class quizQuestionActivity extends AppCompatActivity{
         protected void sendEmail(String results) {
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
+            // Set necessary information for email so that user does not have to manually enter information
             emailIntent.setData(Uri.parse("mailto:"));
             emailIntent.setType("text/plain");
             emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Quiz Results");
             emailIntent.putExtra(Intent.EXTRA_TEXT, results);
 
+            // Makes sure that there is an email account associated
             try {
                 startActivity(Intent.createChooser(emailIntent, "Send email"));
             } catch (android.content.ActivityNotFoundException ex) {
@@ -285,8 +293,6 @@ public class quizQuestionActivity extends AppCompatActivity{
             super.onPause();
             timerHandler.removeCallbacks(timerRunnable);
         }
-
-
 
 
     }

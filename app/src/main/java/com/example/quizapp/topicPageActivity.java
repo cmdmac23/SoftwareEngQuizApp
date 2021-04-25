@@ -190,13 +190,13 @@ public class topicPageActivity extends AppCompatActivity {
 
     }
 
-
+    // Gets information from child activity, formats it, and sends it to parent activity until it reaches the grade book
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         int finalTopic = 0;
         String finalTime = "0:00";
         String finalGrade = "XX%";
 
-
+        // Makes sure information was actually provided (ex. quiz was finished)
         try{
             super.onActivityResult(requestCode, resultCode, data);
             if (requestCode == REQUEST_CODE && resultCode == RESULT_OK){
@@ -209,7 +209,7 @@ public class topicPageActivity extends AppCompatActivity {
         }
 
 
-
+        // Setting intents
         Intent returnIntent = getIntent();
         returnIntent.putExtra("topicChoice", finalTopic);
         returnIntent.putExtra("finalTime", finalTime);
