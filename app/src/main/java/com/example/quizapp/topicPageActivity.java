@@ -28,6 +28,7 @@ public class topicPageActivity extends AppCompatActivity {
         Button topicButton4 = (Button) findViewById(R.id.tpTopic4);
         Button topicButton5 = (Button) findViewById(R.id.tpTopic5);
         Button topicButton6 = (Button) findViewById(R.id.tpTopic6);
+        Button topicButton7 = (Button) findViewById(R.id.tpTopic7);
 
 
         topicButton1.setOnClickListener(new View.OnClickListener() {
@@ -159,6 +160,28 @@ public class topicPageActivity extends AppCompatActivity {
                 if (activity.contains("study")){
                     Intent intent = new Intent(topicPageActivity.this, studyPageActivity.class);
                     intent.putExtra("topicChoice", 6);
+                    intent.putExtra("activity", "study");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        topicButton7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle extras = getIntent().getExtras();
+                String activity = extras.getString("activity");
+
+                //Sends information to next scene on which activity the user wants to use and the topic
+                if (activity.contains("quiz")){
+                    Intent intent = new Intent(topicPageActivity.this, quizQuestionActivity.class);
+                    intent.putExtra("topicChoice", 7);
+                    intent.putExtra("activity", "quiz");
+                    startActivityForResult(intent, REQUEST_CODE);
+                }
+                if (activity.contains("study")){
+                    Intent intent = new Intent(topicPageActivity.this, studyPageActivity.class);
+                    intent.putExtra("topicChoice", 7);
                     intent.putExtra("activity", "study");
                     startActivity(intent);
                 }

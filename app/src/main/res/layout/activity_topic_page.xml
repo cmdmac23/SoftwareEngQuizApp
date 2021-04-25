@@ -29,7 +29,6 @@
                 android:layout_height="100dp"
                 android:insetTop="2dp"
                 android:insetBottom="2dp"
-                android:onClick="topicButton1"
                 android:text="@string/quiz_topic1"
                 android:textSize="30sp"
                 app:backgroundTint="@color/lightest_blue"
@@ -51,7 +50,6 @@
                 android:layout_height="100dp"
                 android:insetTop="2dp"
                 android:insetBottom="2dp"
-                android:onClick="topicButton2"
                 android:text="@string/quiz_topic2"
                 android:textSize="30sp"
                 app:backgroundTint="@color/med_blue"
@@ -73,7 +71,6 @@
                 android:layout_height="100dp"
                 android:insetTop="2dp"
                 android:insetBottom="2dp"
-                android:onClick="topicButton3"
                 android:text="@string/quiz_topic3"
                 android:textSize="30sp"
                 app:backgroundTint="@color/lightest_blue"
@@ -95,7 +92,6 @@
                 android:layout_height="100dp"
                 android:insetTop="2dp"
                 android:insetBottom="2dp"
-                android:onClick="topicButton4"
                 android:text="@string/quiz_topic4"
                 android:textSize="30sp"
                 app:backgroundTint="@color/med_blue"
@@ -117,7 +113,6 @@
                 android:layout_height="100dp"
                 android:insetTop="2dp"
                 android:insetBottom="2dp"
-                android:onClick="topicButton5"
                 android:text="@string/quiz_topic5"
                 android:textSize="30sp"
                 app:backgroundTint="@color/lightest_blue"
@@ -139,7 +134,6 @@
                 android:layout_height="100dp"
                 android:insetTop="2dp"
                 android:insetBottom="2dp"
-                android:onClick="topicButton6"
                 android:text="@string/quiz_topic6"
                 android:textSize="30sp"
                 app:backgroundTint="@color/med_blue"
@@ -149,6 +143,27 @@
 
             <TextView
                 android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:text="@string/blank_string_spacing"
+                tools:visibility="invisible" />
+
+            <Button
+                android:id="@+id/tpTopic7"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:insetTop="2dp"
+                android:insetBottom="2dp"
+                android:text="@string/quiz_topic7"
+                android:textSize="30sp"
+                app:backgroundTint="@color/lightest_blue"
+                app:backgroundTintMode="src_in"
+                app:cornerRadius="@dimen/cardview_compat_inset_shadow"
+                app:iconPadding="4dp" />
+
+            <TextView
+                android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="9dp"
                 android:text="@string/blank_string_spacing"

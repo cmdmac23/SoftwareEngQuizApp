@@ -59,6 +59,12 @@ public class QuestionGenerator {
                         this.questionBank[j] = topicSixQuestion(randomOrder[j]);
                     }
                     break;
+                case 7:
+                    this.totalQuestionNum = 30;
+                    for (int j = 0; j < 30; j++) {
+                        this.questionBank[j] = topicSevenQuestion(randomOrder[j]);
+                    }
+                    break;
             }
         }
 
@@ -95,6 +101,11 @@ public class QuestionGenerator {
                         this.questionBank[j] = topicSixQuestion(randomOrder[j]);
                     }
                     break;
+                case 7:
+                    for (int j = 0; j < totalQuestionNum; j++) {
+                        this.questionBank[j] = topicSevenQuestion(randomOrder[j]);
+                    }
+                    break;
             }
         }
     }
@@ -107,7 +118,7 @@ public class QuestionGenerator {
         if(topicChoice == 1 || topicChoice == 2 || topicChoice == 4) {
             randomOrder = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40};
         }
-        else if (topicChoice == 3){
+        else if (topicChoice == 3 || topicChoice == 7){
             randomOrder = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30};
         }
         else{
@@ -743,6 +754,104 @@ public class QuestionGenerator {
                 break;
             case 20:
                 currentQuestion = new int[]{R.string.topic6_question20, 0, 0};
+                break;
+        }
+
+        return currentQuestion;
+    }
+
+    public static int[] topicSevenQuestion(int num) {
+        int[] currentQuestion = new int[0];
+        switch (num) {
+            case 1:
+                currentQuestion = new int[]{R.string.topic7_question1, 1, 0};
+                break;
+            case 2:
+                currentQuestion = new int[]{R.string.topic7_question2, 0, 0};
+                break;
+            case 3:
+                currentQuestion = new int[]{R.string.topic7_question3, 1, 0};
+                break;
+            case 4:
+                currentQuestion = new int[]{R.string.topic7_question4, 1, 0};
+                break;
+            case 5:
+                currentQuestion = new int[]{R.string.topic7_question5, 0, 0};
+                break;
+            case 6:
+                currentQuestion = new int[]{R.string.topic7_question6, 1, 0};
+                break;
+            case 7:
+                currentQuestion = new int[]{R.string.topic7_question7, 1, 0};
+                break;
+            case 8:
+                currentQuestion = new int[]{R.string.topic7_question8, 0, 0};
+                break;
+            case 9:
+                currentQuestion = new int[]{R.string.topic7_question9, 1, 0};
+                break;
+            case 10:
+                currentQuestion = new int[]{R.string.topic7_question10, 1, 0};
+                break;
+            case 11:
+                currentQuestion = new int[]{R.string.topic7_question11, 1, 0};
+                break;
+            case 12:
+                currentQuestion = new int[]{R.string.topic7_question12, 1, 0};
+                break;
+            case 13:
+                currentQuestion = new int[]{R.string.topic7_question13, 1, 0};
+                break;
+            case 14:
+                currentQuestion = new int[]{R.string.topic7_question14, 0, 0};
+                break;
+            case 15:
+                currentQuestion = new int[]{R.string.topic7_question15, 0, 0};
+                break;
+            case 16:
+                currentQuestion = new int[]{R.string.topic7_question16, 1, 0};
+                break;
+            case 17:
+                currentQuestion = new int[]{R.string.topic7_question17, 0, 0};
+                break;
+            case 18:
+                currentQuestion = new int[]{R.string.topic7_question18, 1, 0};
+                break;
+            case 19:
+                currentQuestion = new int[]{R.string.topic7_question19, 1, 0};
+                break;
+            case 20:
+                currentQuestion = new int[]{R.string.topic7_question20, 1, 0};
+                break;
+            case 21:
+                currentQuestion = new int[]{R.string.topic7_question21, 1, 0};
+                break;
+            case 22:
+                currentQuestion = new int[]{R.string.topic7_question22, 1, 0};
+                break;
+            case 23:
+                currentQuestion = new int[]{R.string.topic7_question23, 0, 0};
+                break;
+            case 24:
+                currentQuestion = new int[]{R.string.topic7_question24, 0, 0};
+                break;
+            case 25:
+                currentQuestion = new int[]{R.string.topic7_question25, 1, 0};
+                break;
+            case 26:
+                currentQuestion = new int[]{R.string.topic7_question26, 1, 0};
+                break;
+            case 27:
+                currentQuestion = new int[]{R.string.topic7_question27, 0, 0};
+                break;
+            case 28:
+                currentQuestion = new int[]{R.string.topic7_question28, 1, 0};
+                break;
+            case 29:
+                currentQuestion = new int[]{R.string.topic7_question29, 0, 0};
+                break;
+            case 30:
+                currentQuestion = new int[]{R.string.topic7_question30, 1, 0};
                 break;
         }
 
