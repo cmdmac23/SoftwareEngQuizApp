@@ -7,17 +7,31 @@ class QuestionGeneratorTest {
     @org.junit.jupiter.api.Test
     void randomize() {
         int totalQuestionsTopic1 = 40;
+        int totalQuestionsTopic2 = 40;
         int totalQuestionsTopic5 = 20;
+        int totalQuestionsTopic7 = 30;
         int matchesTopic1 = 0;
+        int matchesTopic2 = 0;
         int matchesTopic5 = 0;
+        int matchesTopic7 = 0;
 
         int[] randomizedArrayActual1 = QuestionGenerator.randomize(1);
+        int[] randomizedArrayActual2 = QuestionGenerator.randomize(2);
         int[] randomizedArrayActual5 = QuestionGenerator.randomize(5);
+        int[] randomizedArrayActual7 = QuestionGenerator.randomize(7);
 
         for(int i = 1; i <= 40; i++){
             for(int j = 0; j < 40; j++){
                 if(i == randomizedArrayActual1[j]){
                     matchesTopic1 += 1;
+                }
+            }
+        }
+
+        for(int i = 1; i <= 40; i++){
+            for(int j = 0; j < 40; j++){
+                if(i == randomizedArrayActual2[j]){
+                    matchesTopic2 += 1;
                 }
             }
         }
@@ -30,8 +44,18 @@ class QuestionGeneratorTest {
             }
         }
 
+        for(int i = 1; i <= 30; i++){
+            for(int j = 0; j < 30; j++){
+                if(i == randomizedArrayActual7[j]){
+                    matchesTopic7 += 1;
+                }
+            }
+        }
+
         assertEquals(totalQuestionsTopic1, matchesTopic1, "Randomization of array for topic 1 failed");
+        assertEquals(totalQuestionsTopic2, matchesTopic2, "Randomization of array for topic 2 failed");
         assertEquals(totalQuestionsTopic5, matchesTopic5, "Randomization of array for topic 5 failed");
+        assertEquals(totalQuestionsTopic7, matchesTopic7, "Randomization of array for topic 7 failed");
     }
 
 

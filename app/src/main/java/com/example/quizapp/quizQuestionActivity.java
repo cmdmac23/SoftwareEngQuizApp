@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -206,18 +205,11 @@ public class quizQuestionActivity extends AppCompatActivity{
                 finishButton.setVisibility(View.VISIBLE);
                 emailButton.setVisibility(View.VISIBLE);
 
-                //Calculate the grade received based on the amount answered correctly
-                double grade = ((double)numCorrect/(double)totalQuestionNum)*100;
+                String[] resultsString = calculateStrings();
 
-                //Format the grade to only show two decimal places
-                DecimalFormat roundDecimal = new DecimalFormat("#.0");
+                String gradeRounded = resultsString[0];
+                String totalTime = resultsString[1];
 
-                //Type cast to string
-                String gradeRounded = roundDecimal.format(grade);
-                String totalTime = String.format("%d:%02d", finalMinutes, finalSeconds);
-
-                finalGradeReturn = gradeRounded;
-                finalTimeReturn = totalTime;
 
                 //Set text to show grade and final time
                 questionText.setText("You correctly answered " + numCorrect + " questions out of " + totalQuestionNum + ". \nThis gives you a score of " + gradeRounded + "% on this assignment. \n\nYour final time was: " + totalTime);
@@ -252,6 +244,25 @@ public class quizQuestionActivity extends AppCompatActivity{
 
         }
 
+        public String[] calculateStrings(){
+            //Calculate the grade received based on the amount answered correctly
+            double grade = ((double)numCorrect/(double)totalQuestionNum)*100;
+
+            //Format the grade to only show two decimal places
+            DecimalFormat roundDecimal = new DecimalFormat("#0.0");
+
+            //Type cast to string
+            String gradeRounded = roundDecimal.format(grade);
+            String totalTime = String.format("%d:%02d", finalMinutes, finalSeconds);
+
+            finalGradeReturn = gradeRounded;
+            finalTimeReturn = totalTime;
+
+            String results[] = {gradeRounded, totalTime};
+
+            return (results);
+        }
+
         @SuppressLint("LongLogTag")
         protected void sendEmail(String results) {
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
@@ -274,6 +285,8 @@ public class quizQuestionActivity extends AppCompatActivity{
             super.onPause();
             timerHandler.removeCallbacks(timerRunnable);
         }
+
+
 
 
     }
