@@ -224,7 +224,7 @@ public class quizQuestionActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 // Array of all topic choices so that they can be used in email
-                String[] topicChoiceTitles = {"Introduction", "Software Processes", "Implementation", "Agile Software Development", "Software Testing", "Software Testing Techniques", "Future Topic 7", "Future Topic 8"};
+                String[] topicChoiceTitles = {"Introduction", "Software Processes", "Implementation", "Agile Software Development", "Software Testing", "Software Testing Techniques", "Modeling With UML", "Future Topic 8"};
 
                 String resultsMessage = ("I just took a quiz over the topic \"" + topicChoiceTitles[topicChoice-1] + "\" and received a score of " + finalGradeReturn + ".");
 
